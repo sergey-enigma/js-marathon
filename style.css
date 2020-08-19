@@ -1,1 +1,15 @@
 
+body {
+    background-color: #000;
+    color: #666;
+}
+
+#results li.pass {
+    color: green;
+}
+#results li.half-pass {
+    color: yellow;
+}
+#results li.fail {
+    color: red;
+}
