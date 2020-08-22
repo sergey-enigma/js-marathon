@@ -18,17 +18,20 @@ function formattedPhone(phone) {
 }
 
 function assertEquals(expected, actual, message) {
-    let result = 'fail';
-    if (expected === actual) {
-        result = 'pass';
-    } else if (expected == actual) {
-        result = 'half-pass';
-    }
-
     const li = document.createElement('li');
-    li.className = result;
+    li.className = classNameResult(expected, actual);
     li.appendChild(document.createTextNode(message + ': expected = ' + expected + ', actual = ' + actual));
     document.getElementById('results').appendChild(li);
+
+    function classNameResult(expected, actual) {
+        let result = 'fail';
+        if (expected === actual) {
+            result = 'pass';
+        } else if (expected == actual) {
+            result = 'half-pass';
+        }
+        return result;
+    }
 }
 
 
